@@ -1,9 +1,13 @@
 //@ts-check
 
+type Product = { //el tipo de objeto product posee un precio
+  price: number;
+}
+
 // Nos permite corregir errores en tiempo de programación
 (async()=> {
   const myCart = [];
-  const products: object = [];
+  const products: Product[] = []; //Product es un array de objetos de tipo Product
   const limit = 2;
 
   async function getProducts() {
@@ -16,7 +20,7 @@
   function getTotal() {
     let total = 0; //las variables const son constantes, reemplazo por lent
     for (let i = 0; i < products.length ; i++) {
-      total += products[i].prize;
+      total += products[i].price;
     }
     return total;
   }
